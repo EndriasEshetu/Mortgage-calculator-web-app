@@ -1,0 +1,321 @@
+:root {
+  --bg: #f2f4ef;
+  --panel: #f8faf6;
+  --panel-strong: #00492d;
+  --panel-soft: #dfe7df;
+  --text: #17392c;
+  --muted: #658173;
+  --accent: #0f754f;
+  --accent-strong: #0a5a3d;
+  --border: #c7d6cb;
+  --danger: #c34747;
+  --radius: 24px;
+  --shadow: 0 24px 60px rgba(18, 63, 42, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 15% 10%, #ecf2e8 0%, transparent 40%),
+    radial-gradient(circle at 85% 90%, #e6efe8 0%, transparent 45%), var(--bg);
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.calculator-card {
+  width: min(1020px, 100%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: calc(var(--radius) + 4px);
+  overflow: hidden;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.form-panel,
+.results-panel {
+  padding: 32px;
+}
+
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 26px;
+  gap: 12px;
+}
+
+.panel-heading h1 {
+  font-size: 1.85rem;
+  letter-spacing: 0.01em;
+}
+
+.ghost-button {
+  border: none;
+  background: none;
+  color: var(--muted);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  border-bottom: 1px solid var(--muted);
+}
+
+.form-field {
+  margin-bottom: 18px;
+}
+
+.field-label,
+.mortgage-type-group legend {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.field-control {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.field-control:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(15, 117, 79, 0.18);
+}
+
+.field-control.has-error {
+  border-color: var(--danger);
+}
+
+.field-adornment {
+  padding: 12px 14px;
+  color: #416355;
+  background: #edf3ec;
+  font-weight: 700;
+}
+
+input[type="number"],
+input[type="text"] {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  padding: 12px 14px;
+  font-size: 1rem;
+  color: var(--text);
+  background: transparent;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.field-error {
+  margin-top: 6px;
+  color: var(--danger);
+  font-size: 0.84rem;
+}
+
+.calculate-button {
+  width: 100%;
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 18px;
+  background: linear-gradient(140deg, var(--accent), #149565);
+  color: #f2fff8;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.calculate-button:hover {
+  background: linear-gradient(140deg, var(--accent-strong), #0f754f);
+}
+
+.results-panel {
+  color: #dceee5;
+  background: #f4f7f2;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.overview-card {
+  background: var(--panel-soft);
+  border-radius: 24px;
+  padding: 14px 16px;
+  min-height: 112px;
+  position: relative;
+}
+
+.overview-card.full-width {
+  min-height: 124px;
+}
+
+.overview-title {
+  color: #4f6d60;
+  font-size: 0.95rem;
+}
+
+.overview-subtitle {
+  color: #4f6d60;
+  font-size: 1.15rem;
+  margin-top: 12px;
+}
+
+.overview-value {
+  margin-top: 24px;
+  color: #0a3526;
+  font-size: 2.05rem;
+  font-weight: 700;
+}
+
+.overview-value span {
+  color: #4f6d60;
+  font-size: 1.55rem;
+  font-weight: 500;
+}
+
+.overview-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  margin: 0;
+  background: #005a39;
+  color: #d9fff0;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.result-card {
+  margin-top: 4px;
+  background: linear-gradient(170deg, #015b38, #003c25);
+  border-radius: 34px;
+  padding: 22px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.result-label {
+  margin-top: 0;
+  font-size: 2rem;
+  color: #f0fff7;
+}
+
+.result-value {
+  margin-top: 10px;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #eafff5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.result-value.accent {
+  font-size: 3rem;
+  color: #eafff5;
+}
+
+.result-pill {
+  font-size: 1.5rem;
+  font-weight: 500;
+  background: #f4f8f4;
+  color: #22483a;
+  border-radius: 999px;
+  padding: 8px 16px;
+  line-height: 1;
+}
+
+.results-panel.empty {
+  justify-content: center;
+  gap: 10px;
+}
+
+.results-panel.empty h2 {
+  margin: 0;
+  color: #204f3c;
+  font-size: 1.8rem;
+}
+
+.results-panel.empty p {
+  margin: 0;
+  color: #4f6d60;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .calculator-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 580px) {
+  .app-shell {
+    padding: 12px;
+  }
+
+  .form-panel,
+  .results-panel {
+    padding: 22px;
+  }
+
+  .field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .result-value,
+  .result-value.accent {
+    font-size: 2.5rem;
+  }
+
+  .result-pill {
+    font-size: 1rem;
+  }
+
+  .panel-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
