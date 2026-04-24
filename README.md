@@ -7,9 +7,10 @@ A responsive mortgage calculator built with React and Vite that estimates monthl
 - Repayment time (years)
 - Interest rate (annual)
 
-## Live Demo
+**Live Demo:**
+[Mortgage Calculator](https://endrias-mortgage-calculator.netlify.app)
 
-[Mortgage Calculator](https://endrias-mortgage-calculator.netlify.app)/
+---
 
 ## What It Does
 
