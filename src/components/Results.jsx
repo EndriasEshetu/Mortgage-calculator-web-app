@@ -39,7 +39,7 @@ function Results({ result }) {
         <p className="result-label">Estimated payment</p>
         <p className="result-value accent">
           {formatCurrency(result.monthlyPayment)}
-          <span className="result-pill">Month</span>
+          /month
         </p>
       </div>
     </section>

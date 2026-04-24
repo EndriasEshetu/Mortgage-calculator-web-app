@@ -129,7 +129,7 @@ function MortgageForm({ onCalculate }) {
         </div>
 
         <button className="calculate-button" type="submit">
-          Calculate estimate
+          Calculate EMI
         </button>
       </form>
     </section>
