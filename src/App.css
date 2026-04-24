@@ -8,8 +8,6 @@
   --accent-strong: #0a5a3d;
   --border: #c7d6cb;
   --danger: #c34747;
-  --radius: 24px;
-  --shadow: 0 24px 60px rgba(18, 63, 42, 0.15);
 }
 
 * {
@@ -77,6 +75,7 @@ p {
   font-weight: 700;
   font-size: 1.25rem;
   color: var(--text);
+  text-decoration: none;
 }
 
 .pure-logo span {
@@ -216,7 +215,7 @@ p {
 }
 
 .field-label,
-.mortgage-type-group legend {
+.field-label {
   display: block;
   margin-bottom: 8px;
   color: var(--muted);
@@ -263,28 +262,6 @@ input[type="text"] {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
-}
-
-.mortgage-type-group {
-  margin: 4px 0 18px;
-  padding: 0;
-  border: 0;
-}
-
-.mortgage-type-group.has-error legend {
-  color: var(--danger);
-}
-
-.mortgage-type-option {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 0;
-  color: var(--text);
-}
-
-.mortgage-type-option input {
-  accent-color: var(--accent);
 }
 
 .field-error {
