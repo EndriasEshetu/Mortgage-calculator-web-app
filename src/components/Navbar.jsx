@@ -3,23 +3,17 @@ function Navbar() {
     <header className="pure-header">
       <div className="pure-header-content">
         <div className="pure-logo">
-          <div className="pure-logo-icon">
-            <img
-              className="site-nav-mark"
-              src="../../public/elogo.png"
-              alt="MC"
-            />
-          </div>
-          <span>Mortgage</span>Pro
+          <img className="site-nav-mark" src="/elogo.png" alt="MC" />
+          <span>Mortgage</span>Calculator
         </div>
-        <nav className="pure-nav">
-          <a href="#about" className="pure-nav-link">
+        <nav className="nav">
+          <a href="#about" className="nav-link">
             How it works
           </a>
-          <a href="#refinance" className="pure-nav-link">
+          <a href="#refinance" className="nav-link">
             Refinance
           </a>
-          <a href="#contact" className="pure-nav-link">
+          <a href="#contact" className="nav-link">
             Contact
           </a>
         </nav>

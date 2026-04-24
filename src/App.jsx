@@ -16,11 +16,9 @@ function App() {
           <MortgageForm onCalculate={setResult} />
           <Results result={result} />
         </section>
-
         <About />
-
-        <Footer />
       </main>
+      <Footer />
     </>
   );
 }
