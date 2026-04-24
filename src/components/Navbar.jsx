@@ -15,7 +15,7 @@ function Navbar() {
 
   useEffect(() => {
     if (!isMenuOpen) {
-      return undefined;
+      return;
     }
 
     const handlePointerDown = (event) => {
@@ -24,30 +24,26 @@ function Navbar() {
         return;
       }
 
-      if (
-        navRef.current?.contains(target) ||
-        toggleButtonRef.current?.contains(target)
-      ) {
-        return;
-      }
+      const clickedInsideNav = navRef.current?.contains(target);
+      const clickedToggleButton = toggleButtonRef.current?.contains(target);
 
-      closeMenu();
+      if (!clickedInsideNav && !clickedToggleButton) {
+        setIsMenuOpen(false);
+      }
     };
 
-    const handleEscape = (event) => {
+    const handleKeyDown = (event) => {
       if (event.key === "Escape") {
-        closeMenu();
+        setIsMenuOpen(false);
       }
     };
 
-    window.addEventListener("mousedown", handlePointerDown);
-    window.addEventListener("touchstart", handlePointerDown);
-    window.addEventListener("keydown", handleEscape);
+    window.addEventListener("pointerdown", handlePointerDown);
+    window.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      window.removeEventListener("mousedown", handlePointerDown);
-      window.removeEventListener("touchstart", handlePointerDown);
-      window.removeEventListener("keydown", handleEscape);
+      window.removeEventListener("pointerdown", handlePointerDown);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isMenuOpen]);
 
@@ -83,9 +79,6 @@ function Navbar() {
         >
           <a href="#about" className="nav-link" onClick={closeMenu}>
             How it works
-          </a>
-          <a href="#refinance" className="nav-link" onClick={closeMenu}>
-            Refinance
           </a>
           <a href="#contact" className="nav-link" onClick={closeMenu}>
             Contact
