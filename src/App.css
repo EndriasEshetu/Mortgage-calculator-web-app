@@ -36,7 +36,7 @@ p {
 
 .app-shell {
   display: grid;
-  justify-items: center;
+  justify-items: stretch;
   align-content: start;
   min-height: 100vh;
   gap: 2rem;
@@ -142,6 +142,8 @@ p {
   overflow: hidden;
   background: var(--panel);
   scroll-margin-top: 20px;
+  width: min(1100px, 100%);
+  margin: 0 auto;
 }
 
 .about {
@@ -149,6 +151,8 @@ p {
   display: grid;
   gap: 14px;
   scroll-margin-top: 20px;
+  width: min(1100px, 100%);
+  margin: 0 auto;
 }
 
 .about-header {
