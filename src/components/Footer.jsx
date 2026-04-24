@@ -3,10 +3,6 @@ function Footer() {
     <footer className="footer" id="contact">
       <div className="footer-content">
         <p>
-          &copy; {new Date().getFullYear()} Mortgage Calculator. All rights
-          reserved.
-        </p>
-        <p>
           Developed by:
           <a
             className="developer-name"
@@ -17,6 +13,11 @@ function Footer() {
             {" "}
             Endrias Eshetu
           </a>
+        </p>
+
+        <p>
+          &copy; {new Date().getFullYear()} Mortgage Calculator. All rights
+          reserved.
         </p>
 
         <div className="footer-links">
